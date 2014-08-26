@@ -1,18 +1,10 @@
 package org.appuniversity.roboticarm;
 
 import android.app.Activity;
-//import android.app.ActionBar;
-//import android.app.Fragment;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-//import android.view.LayoutInflater;
-//import android.view.Menu;
-//import android.view.MenuItem;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.os.Build;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
@@ -40,8 +32,6 @@ public class MainActivity extends AbstractAdkActivity {
 	 // Giro del brazo completo
 	 Button leftButton;
 	 Button rightButton;
-
-	 
 	 
 	 @Override
 	 protected void doOnCreate(Bundle savedInstanceState) {
@@ -64,9 +54,7 @@ public class MainActivity extends AbstractAdkActivity {
 	  
 	  leftButton = (Button) findViewById(R.id.button_left);
 	  rightButton = (Button) findViewById(R.id.button_right);
-	  
-
-	  
+	   
 	  // seekBar del brazo principal
 	  seekBarB.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {		
 				
@@ -101,7 +89,6 @@ public class MainActivity extends AbstractAdkActivity {
 		
 		@Override
 		public void onStartTrackingTouch(SeekBar seekBar) {
-			// TODO Auto-generated method stub
 			
 		}
 		
@@ -166,7 +153,6 @@ public class MainActivity extends AbstractAdkActivity {
 		}
 	});
 
-	  
 	  // Radio buttons para abrir y cerrar la pinza
 	  ledOn.setOnCheckedChangeListener(new OnCheckedChangeListener(){
 	 
@@ -196,7 +182,5 @@ public class MainActivity extends AbstractAdkActivity {
 	 protected void doAdkRead(String stringIn) {
 	  textIn.setText(stringIn);
 	 }
-	 
-	
 	 
 	}//fin Main
