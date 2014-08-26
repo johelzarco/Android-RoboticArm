@@ -1,5 +1,4 @@
 ##Android-RoboticArm
-==================
 
 ###Robotic arm controlled from an Android device and Arduino.
 
