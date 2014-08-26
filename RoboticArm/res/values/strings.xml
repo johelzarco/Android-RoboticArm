@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RoboticArm</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name= "title">Robotic arm with Android and Arduino</string>
+    
+    <string name = "pinza"> Pinza </string>
+    <string name = "led_on">Abrir pinza</string>
+    <string name = "led_off">Cerrar pinza</string>
+    
+    <string name = "brazo">Brazo</string>
+    <string name = "brazo_progress"> Giro brazo</string>
+    
+    <string name = "antebrazo"> Antebrazo</string>
+    <string name = "ante_progress">Giro ante</string>
+    
+    <string name = "mano"> Mano </string>
+    <string name = "progress_mano"> Giro mano</string>
+    
+    <string name = "muneca"> Muñeca</string>
+    <string name = "progress_mun"> Giro mu</string>
+    
+    <string name = "button_izq">Left</string>
+    <string name = "button_der">Right</string>
+    
+    
+
+</resources>
