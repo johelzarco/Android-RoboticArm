@@ -27,7 +27,7 @@ proguard/
 
 .keystore
 .metadata
-.metada/
+.metadata/
 
 build.xml
 build.properties
