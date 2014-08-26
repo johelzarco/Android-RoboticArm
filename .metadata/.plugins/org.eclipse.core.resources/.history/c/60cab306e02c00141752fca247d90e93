@@ -96,7 +96,8 @@ public class MainActivity extends AbstractAdkActivity {
 		
 		@Override
 		public void onStopTrackingTouch(SeekBar seekBar) {
-		
+			// TODO Auto-generated method stub
+			
 		}
 		
 		@Override
