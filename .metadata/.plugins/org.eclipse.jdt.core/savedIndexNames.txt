@@ -1,4 +1,0 @@
-INDEX VERSION 1.126+/Users/johelzarco/Documents/GitAndroid/.metadata/.plugins/org.eclipse.jdt.core
-3719866967.index
-2339628580.index
-2399301875.index
