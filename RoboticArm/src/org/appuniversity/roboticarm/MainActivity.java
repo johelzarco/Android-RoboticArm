@@ -1,3 +1,10 @@
+// Robotic Arm
+// Android app for communicate with an Arduino Due and control a robotic arm of six degrees of freedom.
+// The communication between Android and Arduino will be through USB protocol; In the android side
+// it will use the Android Open Accessory Protocol and the Arduino part will utilize the Usb Host library
+// developed by Oleg Mazurov (circuitsathome.com)
+//
+// This project can be found with more detail in bio-robotics.org
 package org.appuniversity.roboticarm;
 
 import android.os.Bundle;
@@ -14,21 +21,22 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AbstractAdkActivity {
-	  
+	 // Each seekBar will control the spin of its  servo motors.
 	 TextView textIn;
+	 //Radio button to open or close the arm's gripper
 	 RadioButton ledOn, ledOff;
 	 SeekBar seekBarB;
-	 TextView progressBrazo; // giro del brazo principal
-	 // antebrazo
+	 TextView progressBrazo; // Spin main element (Two servo motor)
+	 // Two servos for the "forearm" element
 	 SeekBar seekBarA;
 	 TextView progressAnte;
-	 // mano
+	 // First servo for the hand
 	 SeekBar seekBarM;
 	 TextView progressMano;
-	 // muneca
+	 // Wrist servo
 	 SeekBar seekBarMun;
 	 TextView progressMun;
-	 // Giro del brazo completo
+	 // Two button to control the DC motor that spins the whole arm in Z axis
 	 Button leftButton;
 	 Button rightButton;
 	 
@@ -54,7 +62,9 @@ public class MainActivity extends AbstractAdkActivity {
 	  leftButton = (Button) findViewById(R.id.button_left);
 	  rightButton = (Button) findViewById(R.id.button_right);
 	   
-	  // seekBar del brazo principal
+	  // seekBar for servo control
+	  // Every seekBar send its state(spin) and an identifier to the arduino in one single string
+	  // For example writeAdk("50j") will tell the arduino to spin the main arm to 40 degree position.
 	  seekBarB.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {		
 				
 		@Override
@@ -75,7 +85,7 @@ public class MainActivity extends AbstractAdkActivity {
 		}
 	});
 	  
-	  // seekbar del antebrazo
+	  // seekBar forearm
 	  seekBarA.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 		
 		@Override
@@ -98,7 +108,7 @@ public class MainActivity extends AbstractAdkActivity {
 		}
 	});
 	  
-	  //seekBar de la mano
+	  //seekBar hand
 	  seekBarM.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 		
 		@Override
@@ -114,7 +124,7 @@ public class MainActivity extends AbstractAdkActivity {
 		}
 	});
 	  
-	  // seekBar de la muneca
+	  // seekBar wrist
 	  
 	  seekBarMun.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 		
@@ -131,7 +141,7 @@ public class MainActivity extends AbstractAdkActivity {
 		}
 	});
 	  
-	  // Botones para girar todo el brazo
+	  // Whole arm spin in Z axis
 	  
 	  leftButton.setOnClickListener(new OnClickListener() {
 		@Override
@@ -149,7 +159,7 @@ public class MainActivity extends AbstractAdkActivity {
 		}
 	});
 
-	  // Radio buttons para abrir y cerrar la pinza
+	  // Radio buttons for gripper
 	  ledOn.setOnCheckedChangeListener(new OnCheckedChangeListener(){
 	 
 	   @Override

@@ -1,11 +1,14 @@
-package org.appuniversity.roboticarm;
+// Implementation for the Android open Accessory protocol.
+// http://developer.android.com/guide/topics/connectivity/usb/accessory.html#manifest
+// Android phone will be the accesory and 
+// the Usb host is going to be the Arduino (Due, Mega ADK or Usb Host Shield).
 
+package org.appuniversity.roboticarm;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
  
-
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -30,15 +33,15 @@ public abstract class AbstractAdkActivity extends Activity{
 	private FileOutputStream myAdkOutputStream;
 	boolean firstRqsPermission;
 
-	//do something in onCreate()
+	
 	protected abstract void doOnCreate(Bundle savedInstanceState);
-	//do something after adk read
+	
 	protected abstract void doAdkRead(String stringIn);	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_main);
+		
 		
 		myUsbManager = (UsbManager)getSystemService(Context.USB_SERVICE);
 		IntentFilter intentFilter = new IntentFilter();
@@ -102,7 +105,7 @@ public abstract class AbstractAdkActivity extends Activity{
 			try {
 				myAdkOutputStream.write(buffer);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}	
 		}
@@ -146,7 +149,7 @@ public abstract class AbstractAdkActivity extends Activity{
 						
 						
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 						break;
 					}
