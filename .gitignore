@@ -24,3 +24,10 @@ proguard/
 #Exclude OS X folder attributes
 
 .DS_Store
+
+.keystore
+.metadata
+
+build.xml
+build.properties
+local.properties
