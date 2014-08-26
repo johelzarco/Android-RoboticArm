@@ -2,7 +2,7 @@
 
 ##Robotic arm controlled from an Android device and Arduino.
 
-[View the complete tutorial for this project](http://bio-robotics.org)
+[View the complete tutorial for this project.](http://bio-robotics.org)
 
 
 
